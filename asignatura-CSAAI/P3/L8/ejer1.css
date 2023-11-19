@@ -1,0 +1,38 @@
+/* Damos estilo a nuestro canvas (lienzo). */
+#canvas {
+    background-color: black;
+    border-color: white;
+    border-width: 6px;
+    border-style: solid;
+    align-content: center;
+    margin-top: 100px;
+    margin-left: 530px;
+}
+/* Icono o favicon de la cabecera del título de la pestaña de la Pág Web. */
+#icon {
+    width: 20px;
+    height: 20px;
+}
+/* Damos estilo a la propia página web html. */
+body {
+    background-color: black;
+}
+/* Damos estilo al título del juego. */
+.title {
+    align-content: center;
+    color: chartreuse;
+    font-size: 100px;
+}
+    #princ {
+        margin-left: 200px;
+        margin-top: 30px;
+    }
+    #secun {
+        margin-left: 970px;
+        margin-top: -142px;
+        font-size: 50px;
+    }
+/* Dando estilos a los botones de start, stop y restart. */
+#boton {
+    margin-left: 400px;
+}

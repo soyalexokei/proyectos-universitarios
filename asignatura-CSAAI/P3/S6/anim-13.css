@@ -1,0 +1,17 @@
+/* Damos estilo a nuestro canvas (lienzo). */
+#canvas {
+    background-color: lightblue;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+}
+
+/* Damos estilo a la propia página web html. */
+body {
+    background-color: rebeccapurple;
+}
+
+/* Damos estilo al encabezado h1. */
+h1 {
+    color: yellow;
+}

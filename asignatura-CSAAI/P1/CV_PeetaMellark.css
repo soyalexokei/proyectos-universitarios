@@ -1,0 +1,239 @@
+/* Hoja de estilos en CSS */
+
+/* Definimos el fondo del CV y, el marco
+de fuera. */
+body {
+    background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1610/yamabikay161000356/65548130-la-textura-de-la-textura-de-color-marr%C3%B3n-claro-la-textura-de-alta-calidad-en-muy-alta-resoluci%C3%B3n.jpg?ver=6");
+    width: 1270px;
+    height: 1810px;
+    margin: 30px;
+    margin-bottom: 180px;
+    border: solid;
+    border-width: 10px;
+    border-color: goldenrod;
+}
+    /* Etiqueta que define las características
+    de la imagen o foto CV. */
+    #peetaimg {
+        margin-top: 80px;
+        margin-left: 170px;
+        border-style: groove;
+        border-width: 10px;
+        border-color: goldenrod;
+    }
+    /* Etiqueta que define las características
+    del título y pie de título. */
+    .encab {
+        width: 640px;
+        margin-left: 510px;
+    }
+        /* Etiqueta que define las características
+        del título = Peeta Mellark. */
+        #title {
+            color: black;
+            font-size: xxx-large;
+            margin-top: -205px;
+            font-family: "Tahoma", sans-serif;
+            font-size: 60px;
+        }
+        /* Etiqueta que define las características
+        del pie de título. */
+        #phrase {
+            color: blue;
+            margin-top: -30px;
+            font-size: 17px;
+            font-style: oblique;
+        }
+
+    /* Etiquetas que definen las características
+    de los encabezados de las secciones izquierdas. */
+    .sectionizq {
+        margin-left: 183px;
+        color: black;
+        font-family: "Tahoma", sans-serif;
+        font-size: 20px;
+    }
+        /* Etiqueta que define las características
+        de "Sobre mí". */
+        #about {
+            margin-top: 120px;
+        }
+        /* Etiqueta que define las características
+        de "Contacto", "Localización" e "Idiomas" */
+        #rest {
+            margin-top: 35px;
+        }
+        /* Etiqueta que define las características
+        de "Hobbies". */
+        #rest2 {
+            margin-top: 45px;
+            margin-left: 180px;
+        }
+        /* Etiqueta que define las características
+        de "Información Adicional". */
+        #rest3 {
+            margin-top: 45px;
+            margin-left: 120px;
+        }
+    /* Etiquetas que definen las características
+    de las descripciones de los encabezados
+    de las secciones izquierdas. */  
+    .descripizq {
+        width: 225px;
+        margin-top: -17px;
+        margin-left: 170px;
+        color: black;
+        font-size: 12px;
+    }
+        /* Etiquetas que definen las características
+        del icono de instagram que hace de pulsador al link
+        que tiene. */
+        #insta {
+            width: 25px;
+            height: 25px;
+        }
+        /* Etiqueta que define las características
+        del icono de ubicación, usado para
+        la descripción de la "Localización" */
+        #ubica {
+            width: 30px;
+            height: 30px;
+        }
+        /* Etiqueta que define las características
+        de los iconos de las lenguas aborígenes
+        de Panem, usados para
+        la descripción de los "Idiomas" */
+        #flag {
+            width: 35px;
+            height: 25px;
+        }
+        /* Etiqueta para indicar la posición de Hobbies. */
+        #hobby {
+            margin-left: 160px;
+        }
+        /* Etiqueta para indicar la posición de la información
+        adicional. */
+        #infoad {
+            margin-left: 140px;
+        }
+    /* Etiquetas que definen las características
+    de los encabezados de las secciones derechas. */
+    .sectionder {
+        margin-left: 550px;
+        color: black;
+        font-family: "Tahoma", sans-serif;
+        font-size: 20px;
+    }
+        /* Etiqueta que define las características
+        de "Experiencia Laboral". */
+        #exper {
+            margin-top: -1384px;
+        }
+        /* Etiqueta que define las características
+        de "Formación Académica". */
+        #formac {
+            margin-top: 40px;
+        }
+        /* Etiqueta que define las características
+        de "Habilidades y Logros". */
+        #HabLog {
+            margin-top: 40px;
+        }
+    /* Etiquetas que definen las características
+    de las descripciones de los encabezados
+    de las secciones derechas. */ 
+    .descripder {
+        width: 600px;
+        margin-top: -9px;
+        margin-left: 510px;
+        color: black;
+        font-size: 14px;
+    }
+        /* Etiqueta que define las características
+        de la descripción de los puestos de trabajo
+        de cada una de las experiencias laborales. */
+        #puesto {
+            text-decoration-line: underline;
+            letter-spacing: 2px;
+        }
+        /* Etiqueta que define las características
+        de la descripción del lugar de trabajo
+        de cada una de las experiencias laborales. */
+        #Trabj {
+            color: rgb(250, 7, 7);
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        /* Etiqueta que define las características
+        de la descripción del periodo de tiempo trabajado
+        de cada una de las experiencias laborales. */
+        #periodo1 {
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-left: 130px;
+        }
+        /* Etiqueta que define las características
+        de la descripción del otro periodo de tiempo trabajado
+        de cada una de las experiencias laborales. */
+        #periodo2 {
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-left: 160px;
+        }
+        /* Etiqueta que define las características
+        de la descripción del resto de los puestos de trabajo
+        de cada una de las experiencias laborales. */
+        #restpuesto {
+            text-decoration-line: underline;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+        /* Etiquetas que definen las características
+        de la descripción de la formación académica
+        realizada. */
+        #formacion {
+            letter-spacing: 2px;
+            margin-top: -15px;
+            color: rgb(12, 99, 9);
+        }
+        #formacion1 {
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: rgb(12, 99, 9);
+        }
+        #place {
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+    /* Etiquetas que definen las características
+    de las descripciones del encabezado de
+    "Habilidades y Logros". */ 
+    .descriphl {
+        width: 600px;
+        margin-top: -15px;
+        margin-left: 510px;
+        color: black;
+        font-size: 14px;
+    }
+        /* Separación entre líneas de Habilidades
+        y Logros. */
+        #sec {
+            margin-top: 10px;
+        }
+        /* Separación entre líneas de cada uno
+        de los Logros. */
+        #log {
+            margin-top: 15px;
+        }
+        /* Icono del sinsajo al final del CV y en el
+        margen inferior. */
+        #webp {
+            margin-left: 540px;
+            margin-top: 195px;
+        }
+        /* Para mostrar el icono de cada sección
+        del CV de Peeta Mellark. Y del título de cabecera. */
+        #icon {
+            width: 40px;
+            height: 20px;
+        }

@@ -1,0 +1,132 @@
+/* Configuración del favicon. */
+#icon {
+    width: 300px;
+    height: 280px;
+}
+/* Diseño del logo de Huawei. */
+#logo1 {
+    width: 140px;
+    height: 90px;
+    margin-top: -15px;
+    margin-left: 5px;
+}
+/* Diseño del logo del procesador fx. */
+#logo2 {
+    width: 90px;
+    height: 50px;
+    margin-top: -18px;
+    margin-right: -142px;
+    margin-left: 142px;
+}
+/* Color de fondo de la página HTML. */
+body {
+    background-color: cyan;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+/* Diseño del título de la Calculadora Huawei Web. */
+h1 {
+    text-align: center;
+    font: bold 40px Tahoma;
+    color: black;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+/* Diseño de la tabla o de la propia calculadora. */
+table {
+    margin: 0 auto;
+    border: solid;
+    width: 470px;
+    height: 650px;
+    border-radius: 15px;
+    border-color: brown;
+    border-width: 10px;
+    background-color: grey;
+}
+/* Diseño de todos y cada uno de los botones. */
+button {
+    background-color: chocolate;
+    color: black;
+    padding: 14px;
+    font-size: 22px;
+    margin: 5px 2px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid brown;
+    width: 75px;
+}
+/* Diseño del botón de eliminar el último carácter.  */
+#del {
+    margin-right: 82px;
+    margin-left: -82px;
+}
+/* Diseñar el botón del 9. */
+#nueve {
+    margin-left: -70px;
+}
+/* Diseñar el botón del 8. */
+#ocho {
+    margin-right: 82px;
+    margin-left: -82px;
+}
+/* Diseñar el botón del 6. */
+#seis {
+    margin-left: -70px;
+}
+/* Diseñar el botón del 5. */
+#cinco {
+    margin-right: 82px;
+    margin-left: -82px;
+}
+/* Diseñar el botón del 3. */
+#tres {
+    margin-left: -70px;
+}
+/* Diseñar el botón del 2. */
+#dos {
+    margin-right: 82px;
+    margin-left: -82px;
+}
+/* Diseñar el botón del elevado al cuadrado. */
+#potencia2 {
+    margin-right: 82px;
+    margin-left: -82px;
+}
+/* Diseñar el botón del elevado al cubo. */
+#potencia3 {
+    margin-left: -70px;
+}
+/* Diseñar el botón del porcentaje. */
+#percien {
+    margin-left: -40px;
+}
+/* Diseño del botón de la división. */
+.operador {
+    margin-left: -40px;
+}
+/* Diseño del botón del igual. */
+#igual {
+    margin-right: 70px;
+    margin-left: -70px;
+}
+/* Diseño del display o pantalla donde mostrar los nº. */
+#display {
+    background-color: white;
+    color: black;
+    text-align: right;
+    font-size: 60px;
+    width: 410px;
+    height: 100px;
+    border-radius: 20px 20px 20px 20px;
+    border: 10px ridge;
+    border-color: brown;
+    margin-right: -245px;
+    margin-left: 5px;
+    margin-top: 0px;
+    /* Para no salirnos del display */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip clip;
+}

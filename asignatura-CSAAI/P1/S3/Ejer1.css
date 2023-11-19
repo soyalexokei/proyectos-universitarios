@@ -1,0 +1,14 @@
+/* Hoja de estilo de CSS */
+
+/* Dando estilo al body */
+#unico {
+    color: red;
+}
+  
+.resaltado {
+    color: orange;
+}
+  
+p {
+    color: blue;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuración obligatoria para la página HTML. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Código JavaScript del Procesado de Imagen. -->
+    <script src="acciones.js" defer></script>
+    <!-- Código CSS del Procesado de Imagen. -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Favicon o icono de la pestaña de la página web del Procesado de Imagen. -->
+    <link id="icon" rel="icon" href="favicon.png" type="image/png">
+    <!-- Título del Procesado de Imagen. -->
+    <title> Image Processing </title>
+</head>
+<body>
+    <!-- Título del procesado de imágenes. -->
+    <h1> PROCESADO DE DOS IMÁGENES DE LA PELÍCULA: "AVATAR" </h1>
+    <!-- Contenido de las imágenes iniciales y de la imagen manipulada. -->
+    <table>
+        <!-- 1º fila: Título de las 2 imágenes y las propias 2 imágenes. -->
+        <tr>
+            <td> 
+                <p id="titleA"> Imagen A: </p>
+                <p> <img id="imgA" src="Avatar1.jpg" alt="Avatar 1"> </p>
+            </td>
+            <td> 
+                <p id="titleB"> Imagen B: </p>
+                <p> <img id="imgB" src="Avatar2.jpg" alt="Avatar 2"> </p>
+            </td>
+        </tr>
+        <!-- 2º fila: Elección de 1 de las 2 imágenes a manipular. -->
+        <tr>
+            <!-- 1º dato es para que los botones de elección no estén hacia la izquierda. -->
+            <td></td>
+            <td>
+                <p id="explain"> Elige una imagen para manipularla: </p>
+                <input type="button" id="butA" value="IMAGEN A">
+                <input type="button" id="butB" value="IMAGEN B">
+            </td>
+            <!-- Último dato es para que los botones de elección no estén hacia la derecha. -->
+            <td></td>
+        </tr>
+        <!-- 3º fila: Título de la imagen manipulada y la propia imagen manipulada. -->
+        <tr>
+            <!-- 1º dato es para que la imagen manipulada no esté hacia la izquierda. -->
+            <td></td>
+            <td>
+                <p id="titleManip"> Imagen Manipulada: </p>
+                <canvas id="canvasManip"></canvas>
+            </td>
+            <!-- Último dato es para que la imagen manipulada no esté hacia la derecha. -->
+            <td></td>
+        </tr>
+        <!-- 4º fila: Título de los ajustes de la manipulación de la imagen. -->
+        <tr>
+            <td>
+                <p id="ajustes"> Ajustes de la manipulación: </p>
+            </td>
+        </tr>
+        <!-- 5º fila: Botones de transformación a escala de grises, color RGB y volver al inicio. -->
+        <tr>
+            <td> <input type="button" id="grayBut" value="En Gray Scale"> </td>
+            <td> <input type="button" id="rgbBut" value="En RGB"> </td>
+            <!-- El botón home forma parte de las mejoras. -->
+            <td> <button id="homeBut"> <img id="home" src="home.png" alt="Home"> </button> </td>
+        </tr>
+        <!-- 6º fila: Controles deslizantes de R, G y B. -->
+        <tr>
+            <td id="deslizador">
+                <!-- Deslizador del control de R (Rojo = Red). -->
+                <p id="explainR"> R: <input type="range" id="red" min="0" max="255" value="255">
+                <span id="displayRed"></span> </p>
+                <!-- Deslizador del control de G (Verde = Green). -->
+                <p id="explainG"> G: <input type="range" id="green" min="0" max="255" value="255">
+                    <span id="displayGreen"></span> </p>
+                <!-- Deslizador del control de B (Azul = Blue). -->
+                <p id="explainB"> B: <input type="range" id="blue" min="0" max="255" value="255">
+                    <span id="displayBlue"></span> </p>
+            </td>
+        </tr>
+        <!-- 7º fila: Más ajustes (parte de mejoras). -->
+        <tr>
+            <td>
+                <p id="ajustes2"> Más ajustes: </p>
+            </td>
+        </tr>
+        <!-- 8º fila: Botones del resto de los ajustes. -->
+        <tr>
+            <td> <input type="button" id="rotatBut" value="Imagen volteada 180º"> </td>
+            <td> <input type="button" id="especBut" value="Imagen especular"> </td>
+        </tr>
+    </table>
+</body>
+</html>

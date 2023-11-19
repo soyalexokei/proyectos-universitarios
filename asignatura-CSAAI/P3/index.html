@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!-- Configuración obligatoria para la página HTML. -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Código JavaScript del videojuego retro. -->
+    <script src="actions.js" defer></script>
+    <!-- Código CSS del videojuego retro. -->
+    <link rel="stylesheet" href="design.css">
+    <!-- Título del videojuego retro. -->
+    <title> KB Game </title>
+    <!-- Favicon o icono de la pestaña de la página web. -->
+    <link id="icon" rel="icon" href="Logo_Kick_Blocks.png" type="image/png">
+</head>
+<!-- Aquí empieza el canvas del videojuego retro creado, con su título. -->
+<body>
+    <audio id="audiofondo">
+        <source src="Sonido_fondo.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Título del videojuego retro: Kick Blocks Game. -->
+    <h1>
+        <!-- Logo del videojuego retro. -->
+        <img id="logo" src="Logo_Kick_Blocks.png" alt="Kick Blocks">
+        Kick Blocks
+        <span id="subtitle"> Game </span>
+    </h1>
+    <!-- Creamos el canvas, donde va a estar el videojuego en sí. -->
+    <canvas id="canvas"></canvas>
+    <!-- Tabla donde se muestran los controles del juego. -->
+    <table>
+        <!-- 1º fila: Título de los controles. -->
+        <tr>
+            <h4> CONTROLES: </h4>
+        </tr>
+        <!-- 2º fila: Pulsar PLAY para iniciar el videojuego y recarga la página para reiniciar. -->
+        <tr>
+            <td>
+                <div id="inicio">
+                    Pulsa PLAY para poder iniciar el juego:
+                    <scan> <input type="button" id="play" value="PLAY"> </scan>
+                </div>
+            </td>
+            <td> 
+                <div id="reinicio"> 
+                    Pulsa REINICIAR, si quieres volver a jugar:
+                    <scan> <input type="button" id="restart" value="REINICIAR" onclick="location.reload()"> </scan>
+                </div> 
+            </td>
+        </tr>
+        <!-- 3º fila: Resto de controles. -->
+        <tr>
+            <!-- Botón de ir hacia la izquierda. -->
+            <td> <p id="resto1"> Pulsa la tecla "<=" <br> para mover la raqueta <br> hacia la izquierda </p> </td>
+            <!-- Botón de saque. -->
+            <td> <p id="resto2"> Pulsa "Tecla_espacio" <br> para sacar </p> </td>
+            <!-- Botón de ir hacia la derecha. -->
+            <td> <p id="resto3"> Pulsa la tecla "=>" <br> para mover la raqueta <br> hacia la derecha </p> </td>
+        </tr>
+    </table>
+        <!-- Ajustes del sonido de fondo. -->
+            <h4 id="tituloSound"> Ajustes del sonido de fondo: </h4>
+            <!-- Botones de control del sonido. -->
+            <input type="button" id="playSound" value="PLAY SOUND">
+            <!-- Deslizador del control de volumen. -->
+            <p id="msg_volum"> Volumen: <input type="range" id="volumen" value="0.1" min="0" max="1" step="0.1"> 
+                <span id="displayDesliza"> </span> </p>
+        <!-- Ajustes del nivel de dificultad. -->
+            <p id="previa"> Antes de comenzar..... </p>
+            <h4 id="level"> NIVEL DE DIFICULTAD: </h4>
+            <input type="button" id="facil" value="FÁCIL">
+            <input type="button" id="medio" value="MEDIO">
+            <input type="button" id="dificil" value="DIFÍCIL">
+</body>
+</html>
