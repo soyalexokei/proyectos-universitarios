@@ -1,0 +1,82 @@
+//-- Contenido de la Sección Registrarse como Cliente del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+    title='MAD Services: Registrarse como Cliente'
+
+block body
+    div.interfazRegistrarse
+        div.row
+            div.column
+                h1='Darse de alta como Cliente:'
+                img.madservicestipologo(src='/images/madforclients.png' alt='madforclientsLOGO')
+                br
+                br
+                form(method='POST' action='/registrarse/cliente')
+                    label='Nombre: '
+                    input.camposInput(type='text' name='nombre' placeholder='Escribe tu nombre....')
+                    br
+                    br
+                    label='Apellidos: '
+                    input.camposInput(type='text' name='apellidos' placeholder='Escribe tus dos apellidos....')
+                    br
+                    br
+                    label.genero(for='genero')='Género: '
+                    span
+                        input(type='radio' name='genero' value='Hombre')
+                        label(for='genero')='Hombre'
+                        input(type='radio' name='genero' value='Mujer')
+                        label(for='genero')='Mujer'
+                        input(type='radio' name='genero' value='Otro')
+                        label(for='genero')='Otro'
+                    br
+                    br
+                    label='E-mail: '
+                    input.camposInput(type='email' name='email' placeholder='Introduce un correo electrónico válido....')
+                    br
+                    br
+                    label='Nueva contraseña: '
+                    input.camposInput(type='password' name='password' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    label='Repite contraseña: '
+                    input.camposInput(type='password' name='confirmPassword' placeholder='Introduce una Contraseña válida....')
+                    br
+                    br
+                    label='País: '
+                    input.camposInput(type='text' name='pais' placeholder='Introduce un país válido....')
+                    br
+                    br
+                    label='Código Postal: '
+                    input.camposInput(type='number' name='cp' placeholder='Introduce un código postal válido....')
+                    br
+                    br
+                    label='Región: '
+                    input.camposInput(type='text' name='region' placeholder='Introduce una región válida....')
+                    br
+                    br
+                    label='Población: '
+                    input.camposInput(type='text' name='poblacion' placeholder='Introduce una población válida....')
+                    br
+                    br
+                    label='Dirección: '
+                    input.camposInput(type='text' name='direccion' placeholder='Introduce la dirección de un domicilio válido y el nº....')
+                    button#btnAltaRegistrarse(type='submit')='Darse de alta'
+            div.column
+                img#animacionRegistrarse(src='/gifs/gifClienteRegistrarse.gif' alt='gifClienteRegistrarse')
+                div.row
+                    div.column
+                    div.column
+                    div.column
+                div.row
+                    div.column
+                        form(method='GET' action='/registrarse')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-circle-left.fa-2xl
+                    div.column
+                        form(method='GET' action='/login/cliente')
+                            button#btnYaCuentaRegistrarse='¡Ya tengo cuenta!'
+                    div.column
+                        form(method='GET' action='/')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-house.fa-2xl

@@ -1,0 +1,216 @@
+//-- Contenido del Perfil de los Clientes del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+  title=`MAD Services: Sesión ${id}`
+
+block body
+    include ./componentes/cabecera.pug
+    .perfilCliente
+        br
+        header
+            img(src='/images/encabezadoCustomers.png' alt='encabezadoCustomers')
+            h1=`Hola ${nombre} ${apellidos}, éste es tu perfil:`
+        div.row
+            div.column
+                h3='Actualización de mi perfil: '
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-nombre`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='Nombre: '
+                    input.camposInput(type='text' name='nombre' placeholder='Escribe tu nombre....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-apellidos`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='Apellidos: '
+                    input.camposInput(type='text' name='apellidos' placeholder='Escribe tus dos apellidos....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-genero`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label.genero(for='genero')='Género: '
+                    span
+                        input(type='radio' name='genero' value='Hombre')
+                        label(for='genero')='Hombre'
+                        input(type='radio' name='genero' value='Mujer')
+                        label(for='genero')='Mujer'
+                        input(type='radio' name='genero' value='Otro')
+                        label(for='genero')='Otro'
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-email`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='E-mail: '
+                    input.camposInput(type='email' name='email' placeholder='Introduce un correo electrónico válido....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-password`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='Antigua contraseña: '
+                    input.camposInput(type='password' name='oldpassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    label='Nueva contraseña: '
+                    input.camposInput(type='password' name='newpassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    label='Repite la contraseña: '
+                    input.camposInput(type='password' name='repitePassword' placeholder='Introduce una Contraseña válida....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/actualizar-localizacion`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='País: '
+                    input.camposInput(type='text' name='pais' placeholder='Introduce un país válido....')
+                    br
+                    br
+                    br
+                    label='Código Postal: '
+                    input.camposInput(type='number' name='cp' placeholder='Introduce un código postal válido....')
+                    br
+                    br
+                    br
+                    label='Región: '
+                    input.camposInput(type='text' name='region' placeholder='Introduce una región válida....')
+                    br
+                    br
+                    br
+                    label='Población: '
+                    input.camposInput(type='text' name='poblacion' placeholder='Introduce una población válida....')
+                    br
+                    br
+                    br
+                    label='Dirección: '
+                    input.camposInput(type='text' name='direccion' placeholder='Introduce la dirección de un domicilio válido y el nº....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+            div.column
+                h3='Mi Información: '
+                div.subcolumn
+                    if id
+                        label='El identificador/ID de mi perfil: ' + id
+                        br
+                        br
+                    if nombre
+                        label='Mi nombre: ' + nombre
+                        br
+                        br
+                    if apellidos
+                        label='Mis dos apellidos: ' + apellidos
+                        br
+                        br
+                    if genero
+                        label='Mi género: ' + genero
+                        br
+                        br
+                    if email
+                        label='Mi E-mail: ' + email
+                        br
+                        br
+                    if password
+                        label='Mi contraseña: '
+                        input.camposInput(type='text' name='password' value=password readonly)
+                        br
+                        br
+                i.fa-sharp.fa-solid.fa-location-dot.fa-2xl
+                h3#tituloLocalizacionCliente='Mi localización: '
+                div.subcolumn2
+                    label=direccion + ', ' + poblacion + ', ' + region + ', ' + pais + ', ' + cp + '.'
+        div.row
+            div.column
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/borrar-tarjeta`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    input(type='checkbox' name='borraCard')
+                    label='Borrar Tarjeta'
+                    button(type='submit')
+                        i.fa-solid.fa-eraser.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/editar-numero`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    input.camposInput(type='number' name='numtarjeta' placeholder='Introduce un nuevo nº de tarjeta....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/editar-validez`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    input.camposInput(type="month" name='validez' placeholder='Introduce una nueva fecha de expiración....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/editar-nombre`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    input.camposInput(type='text' name='namecard' placeholder='Introduce un nuevo nombre....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/editar-cvv`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    input.camposInput(type='number' name='cvv' placeholder='Introduce un nuevo código CVV....')
+                    button(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+            div.column
+                div.tarjetaBankPerfil
+                    div#caraA
+                        img(src="/images/bg-card-front.png" alt="Frente de la tarjeta")
+                        div#contenido
+                            img(src="/images/card-logo.svg" alt="")
+                            br
+                            p#numTarjeta=numcard
+                            p#fechaexp='Válida hasta: ' + expiracion
+                            p#nombrecard=cliente
+            div.column
+                div.tarjetaBankPerfil
+                    div#caraB
+                        img(src="/images/bg-card-back.png" alt="Dorso de la tarjeta")
+                        div#contenido
+                            p=cvv
+        div.row
+            div.column
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/ingresar-tarjeta`)
+                    input(type='checkbox' name='ingresaCard')
+                    label='Ingresar Tarjeta'
+                    br
+                    br
+                    input.camposInput(type='number' name='tarjetab' placeholder='Introduce un nº de tarjeta....')
+                    br
+                    br
+                    input.camposInput(type="month" name='fvalidez' placeholder='Introduce una fecha de expiración....')
+                    br
+                    br
+                    input.camposInput(type='text' name='nombrecard' placeholder='Introduce un nombre....')
+                    br
+                    br
+                    input.camposInput(type='number' name='cvvcod' placeholder='Introduce un código CVV....')
+                    button(type='submit')
+                        i.fa-solid.fa-plus.fa-2xl
+            div.column
+                h3='Darse de baja de MAD Services: '
+                form(method='POST' action=`/sesion-cliente/${id}/perfil/darse-baja`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    label='¿Confirmas que quieres darte de baja de MAD Services?: '
+                    br
+                    br
+                    select(name="dileAdios")
+                        option(checked)=''
+                        option='Sí'
+                        option='No' 
+                    button#btnBajaCliente(type='submit')='Confirmo'
+        div.row
+            div.column
+                h3='Mis compras: '
+                each compra in miscompras
+                    - var cantidades = parseInt(compra.cantidades, 10)
+                    if cantidades === 1
+                        .vistaCliente
+                            p=compra.fecha
+                            img(src=`data:image/*;base64,${compra.imagen}`)
+                            p=compra.titulo 
+                            p=cantidades + ' unidad'
+                            p=compra.preciototal + '€'
+                    else 
+                        .vistaCliente
+                            p=compra.fecha
+                            img(src=`data:image/*;base64,${compra.imagen}`)
+                            p=compra.titulo 
+                            p=cantidades + ' unidades'
+                            p=compra.preciototal + '€'
+        br
+    include ./componentes/piepagina.pug

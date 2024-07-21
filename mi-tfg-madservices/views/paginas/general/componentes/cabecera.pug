@@ -1,0 +1,17 @@
+//-- Contenido del Componente Cabecera del Comercio Electrónico MAD Services.
+div.cabecera
+  div.row
+    div.column
+      form(method='GET' action='/')
+        button.btnImgLogoMad
+          img(src='/images/madservices.png' alt='madservices')
+    div.column#posicionColumnasCabecera
+      form(method='GET' action='/login')
+        button.btnAutenticar='Iniciar Sesión'
+    div.column#posicionColumnasCabecera
+      form(method='GET' action='/registrarse')
+        button.btnAutenticar='Registrarse'
+    div.column#posicionCarrito
+      form(method='GET' action='/registrarse/cliente')
+        button.btnCarrito
+          i.fa-solid.fa-cart-arrow-down.fa-2xl

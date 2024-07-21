@@ -1,0 +1,66 @@
+//-- Contenido de la Sección Registrarse como Empresa del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+    title='MAD Services: Registrarse como Empresa'
+
+block body
+    div.interfazRegistrarse
+        div.row
+        div.row
+            div.column
+                h1='Darse de alta como Empresa:'
+                img.madservicestipologo(src='/images/madforcompanies.png' alt='madforcompaniesLOGO')
+                br
+                br
+                form(method="POST" action='/registrarse/empresa')
+                    label='Nombre de la Empresa: '
+                    input.camposInput(type='text' name='marca' placeholder='Introduce el nombre de la Empresa....')
+                    br
+                    br
+                    label.genero='Tipo de empresa: '
+                    select.tipoEmpresa(name='tipo')
+                        option(checked)=''
+                        option='RESTAURANTE'
+                        option='ACADEMIA'
+                        option='COMERCIO'
+                        option='PELUQUERIA'
+                    br
+                    br
+                    label='Código CIF/NIF: '
+                    input.camposInput(type='text' name='nif' placeholder='Introduce el Código CIF/NIF válido....')
+                    br
+                    br
+                    label='E-mail: '
+                    input.camposInput(type='email' name='email' placeholder='Introduce un correo electrónico válido....')
+                    br
+                    br
+                    label='Nueva contraseña: '
+                    input.camposInput(type='password' name='password' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    label='Repite contraseña: '
+                    input.camposInput(type='password' name='confirmPassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    br
+                    button#btnAltaRegistrarse(type='submit')='Darse de alta'
+            div.column
+                img#animacionRegistrarse(src='/gifs/gifEmpresaRegistrarse.gif' alt='gifEmpresaRegistrarse')
+                div.row
+                    div.column
+                    div.column
+                    div.column
+                div.row
+                    div.column
+                        form(method='GET' action='/registrarse')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-circle-left.fa-2xl
+                    div.column
+                        form(method='GET' action='/login/empresa')
+                            button#btnYaCuentaRegistrarse='¡Ya tengo cuenta!'
+                    div.column
+                        form(method='GET' action='/')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-house.fa-2xl

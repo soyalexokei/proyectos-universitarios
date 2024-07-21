@@ -1,0 +1,27 @@
+//-- Contenido del Inicio Autenticado para Miembros MAD del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+  title=`MAD Services: Sesión ${id}`
+
+block body
+  include ./componentes/cabecera.pug
+  div.inicio
+    br
+    br
+    div.row
+    div.row
+    div.row
+      div.column
+        h1='Productos MAD'
+        form(method='GET' action=`/sesion-miembro/${id}/productosmadservices`)
+            canvas#marcaMAD
+            img#imgMAD(src='/images/madservices.png' alt='madservices')
+            button.btnCanvas 
+      div.column
+        h1='Resto de marcas'
+        form(method='GET' action=`/sesion-miembro/${id}/themall`)
+            canvas#multiMarca
+            img#imgMulti(src='/images/multimarca.png' alt='multimarca')
+            button.btnCanvas
+  include ./componentes/piepagina.pug

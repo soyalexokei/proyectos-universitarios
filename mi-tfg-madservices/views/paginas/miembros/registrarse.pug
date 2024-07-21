@@ -1,0 +1,71 @@
+//-- Contenido de la Sección Registrarse como Miembro MAD del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+    title='MAD Services: Registrar Miembros MAD'
+
+block body
+    div.interfazRegistrarse
+        div.row
+        div.row
+            div.column
+                h1='Darse de alta como Miembro MAD:'
+                img.madservicestipologo(src='/images/madservices.png' alt='madservices')
+                br
+                br
+                form(method="POST" action='/registrarse/autorizar/miembro')
+                    label='Miembro: '
+                    input.camposInput(type='text' name='miembro' placeholder='Introduce el nombre del Miembro de MAD Services....')
+                    br
+                    br
+                    label.genero='Departamento: '
+                    select.tipoEmpresa(name='departamento')
+                        option(checked)=''
+                        option='DIRECCION'
+                        option='ADMINISTRACION'
+                        option='CIBERSEGURIDAD'
+                        option='INGENIERIA'
+                        option='RRHH'
+                        option='VENTAS'
+                        option='ECONOMIA'
+                    br
+                    br
+                    label.genero(for='genero')='Género: '
+                    span
+                        input(type='radio' name='genero' value='Hombre')
+                        label(for='genero')='Hombre'
+                        input(type='radio' name='genero' value='Mujer')
+                        label(for='genero')='Mujer'
+                        input(type='radio' name='genero' value='Otro')
+                        label(for='genero')='Otro'
+                    br
+                    br
+                    label='E-mail: '
+                    input.camposInput(type='email' name='email' placeholder='Introduce un correo electrónico válido....')
+                    br
+                    br
+                    label='Nueva contraseña: '
+                    input.camposInput(type='password' name='password' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    label='Repite contraseña: '
+                    input.camposInput(type='password' name='confirmPassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    br
+                    button#btnAltaRegistrarse(type='submit')='Darse de alta'
+            div.column
+                div.row
+                div.row
+                    div.column
+                        form(method='GET' action='/registrarse')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-circle-left.fa-2xl
+                    div.column
+                        form(method='GET' action='/login/autorizar/miembro')
+                            button#btnYaCuentaRegistrarse='¡Ya tengo cuenta!'
+                    div.column
+                        form(method='GET' action='/')
+                            button#btnRegistrarse
+                                i.fa-solid.fa-house.fa-2xl

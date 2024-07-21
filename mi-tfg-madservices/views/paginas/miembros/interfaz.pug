@@ -1,0 +1,364 @@
+//-- Contenido de la Interfaz de los Miembros MAD del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+    title=`MAD Services: Sesión ${id}`
+
+block body
+    include ./componentes/cabecera.pug
+    .interfazMiembroMAD
+        br
+        header
+            if departamento === 'DIRECCION'
+                img(src='/images/DptoDireccion.png' alt='DptoDireccion')
+            else if departamento === 'ADMINISTRACION'
+                img(src='/images/DptoAdministracion.png' alt='DptoAdministracion')
+            else if departamento === 'CIBERSEGURIDAD'
+                img(src='/images/DptoCiberseguridad.png' alt='DptoCiberseguridad')
+            else if departamento === 'INGENIERIA'
+                img(src='/images/DptoIngenieria.png' alt='DptoIngenieria')
+            else if departamento === 'RRHH'
+                img(src='/images/DptoRRHH.png' alt='DptoRRHH')
+            else if departamento === 'VENTAS'
+                img(src='/images/DptoVentas.png' alt='DptoVentas')
+            else
+                img(src='/images/DptoEconomia.png' alt='DptoEconomia')
+            h1=`Interfaz del Departamento de ${departamento}:`
+        div.row
+            div.column
+                h3='Actualización de campos: '
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/actualizar-miembro`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='Miembro: '
+                    input.camposInput(type='text' name='miembro' placeholder='Introduce el nombre del Miembro MAD....')
+                    button.btnEdicionMiembroEnInterfaz(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/actualizar-departamento`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label.genero='Departamento: '
+                    select(name='departamento')
+                        option(checked)=''
+                        option='DIRECCION'
+                        option='ADMINISTRACION'
+                        option='CIBERSEGURIDAD'
+                        option='INGENIERIA'
+                        option='RRHH'
+                        option='VENTAS'
+                        option='ECONOMIA'
+                    button.btnEdicionMiembroEnInterfaz(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/actualizar-genero`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label.genero='Género: '
+                    span
+                        input(type='radio' name='genero' value='Hombre')
+                        label='Hombre'
+                        input(type='radio' name='genero' value='Mujer')
+                        label='Mujer'
+                        input(type='radio' name='genero' value='Otro')
+                        label='Otro'
+                    button.btnEdicionMiembroEnInterfaz(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/actualizar-email`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='E-mail: '
+                    input.camposInput(type='email' name='email' placeholder='Introduce un correo electrónico válido....')
+                    button.btnEdicionMiembroEnInterfaz(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/actualizar-password`)
+                    input(type='hidden' name='_method' value='PATCH')
+                    label='Antigua contraseña: '
+                    input.camposInput(type='password' name='oldpassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    label='Nueva contraseña: '
+                    input.camposInput(type='password' name='newpassword' placeholder='Introduce una contraseña válida....')
+                    br
+                    br
+                    br
+                    label='Repite la contraseña: '
+                    input.camposInput(type='password' name='repitePassword' placeholder='Introduce una Contraseña válida....')
+                    button.btnEdicionMiembroEnInterfaz(type='submit')
+                        i.fa-solid.fa-square-pen.fa-2xl
+            div.column
+                h3='Información del Miembro MAD: '
+                div.subcolumn
+                    if id
+                        label='El identificador/ID oficial: ' + id
+                        br
+                        br
+                    if miembro
+                        label='Miembro: ' + miembro
+                        br
+                        br
+                    if departamento
+                        label='Departamento: ' + departamento
+                        br
+                        br
+                    if genero
+                        label='Género: ' + genero
+                        br
+                        br
+                    if email
+                        label='E-mail: ' + email
+                        br
+                        br
+                    if password
+                        label='Contraseña: '
+                        input.camposInput(type='text' name='password' value=password readonly)
+        div.row
+            div.column
+                h3='Nº de Clientes MAD:'
+                table
+                    tr 
+                        th='Hombres'
+                            span
+                        th='Mujeres'
+                            span
+                        th='Otros'
+                    tr 
+                        td=numHombres
+                        td=numMujeres
+                        td=numOtros
+                h3='Clientes que guardan la tarjeta bancaria:'
+                table
+                    tr 
+                        th='Hombres'
+                            span
+                        th='Mujeres'
+                            span
+                        th='Otros'
+                    tr 
+                        td=cardH
+                        td=cardM
+                        td=cardO
+            div.column
+                h3='Nº de Empresas inscritas en MAD Services:'
+                table
+                    tr 
+                        th='Restaurantes'
+                            span
+                        th='Academias'
+                            span
+                        th='Comercios'
+                            span 
+                        th='Peluquerías'
+                    tr 
+                        if sumaRest === 1
+                            td=sumaRest + ' empresa'
+                        else
+                            td=sumaRest + ' empresas'
+                        if sumaAca === 1
+                            td=sumaAca + ' empresa'
+                        else
+                            td=sumaAca + ' empresas'
+                        if sumaCom === 1
+                            td=sumaCom + ' empresa'
+                        else
+                            td=sumaCom + ' empresas'
+                        if sumaPeluq === 1
+                            td=sumaPeluq + ' empresa'
+                        else
+                            td=sumaPeluq + ' empresas'
+            div.column
+                h3='Nº de Trabajadores por Departamento en MAD Services:'
+                if numMiembrosDireccion === 1  
+                    label='Dirección: ' + numMiembrosDireccion + ' trabajador'
+                    br
+                else 
+                    label='Dirección: ' + numMiembrosDireccion + ' trabajadores'
+                    br
+                if numMiembrosAdministracion === 1
+                    label='Administración: ' + numMiembrosAdministracion + ' trabajador'
+                    br
+                else 
+                    label='Administración: ' + numMiembrosAdministracion + ' trabajadores'
+                    br
+                if numMiembrosCiberseguridad === 1
+                    label='Ciberseguridad: ' + numMiembrosCiberseguridad + ' trabajador'
+                    br
+                else 
+                    label='Ciberseguridad: ' + numMiembrosCiberseguridad + ' trabajadores'
+                    br
+                if numMiembrosIngenieria === 1
+                    label='Ingeniería: ' + numMiembrosIngenieria + ' trabajador'
+                    br
+                else 
+                    label='Ingeniería: ' + numMiembrosIngenieria + ' trabajadores'
+                    br
+                if numMiembrosRRHH === 1
+                    label='RR.HH: ' + numMiembrosRRHH + ' trabajador'
+                    br
+                else
+                    label='RR.HH: ' + numMiembrosRRHH + ' trabajadores'
+                    br
+                if numMiembrosVentas === 1
+                    label='Ventas: ' + numMiembrosVentas + ' trabajador'
+                    br
+                else 
+                    label='Ventas: ' + numMiembrosVentas + ' trabajadores'
+                    br
+                if numMiembrosEconomia === 1
+                    label='Economía: ' + numMiembrosEconomia + ' trabajador'
+                    br
+                else
+                    label='Economía: ' + numMiembrosEconomia + ' trabajadores'
+                    br
+        div.row
+            div.column
+                h3='Ingreso de producto para su venta: '
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/nuevo-producto` enctype="multipart/form-data")
+                    label='Imagen de portada: '
+                    input.camposInput(type='file' name='portada' accept="image/*")
+                    br
+                    br
+                    label='Cantidad: '
+                    input.camposInput(type="number" name='cantidad' placeholder='Cantidad de productos....')
+                    br
+                    br
+                    label.genero='Tipo de producto:'
+                    select(name="categoria")='Categorias'
+                        option(checked)=''
+                        optgroup(label='Libros')
+                            option='Libros infantiles' 
+                            option='Libros juveniles'
+                            option='Libros de historia'
+                            option='Libros de naturaleza'
+                            option='Libros de economía'
+                            option='Libros escolares'
+                            option='Libros de misterio'
+                            option='Libros de salud y bienestar'
+                            option='Libros religiosos'
+                            option='Libros en inglés'
+                            option='Poesía'
+                        optgroup(label='Juegos')
+                            option='Juegos de mesa'
+                            option='Videojuegos'    
+                        optgroup(label='Electrónica e Informática')
+                            option='Consolas'
+                    br
+                    br
+                    label='Título:'
+                    input.camposInput(type="text" name='titulo' placeholder='Ponle un título....')
+                    br
+                    br
+                    label='Precio:'
+                    input.camposInput(type="number" step="any" name='precio' placeholder='Precio del producto....')
+                    span='€'
+                    br
+                    br
+                    label.genero='Peso (para el envío):'
+                    select(name="peso")
+                        option(checked)=''
+                        option='Hasta 2'
+                        option='Hasta 5'
+                        option='Hasta 7'
+                        option='Hasta 10'
+                        option='Hasta 15'
+                        option='> 15'
+                    span='Kg'
+                    br
+                    br
+                    label='Descripción:'
+                    textarea(rows="10" cols="50" name='descripcion' placeholder='Describe el producto....')
+                    button.btnTexto(type='submit')='Ingresar'
+            div.column
+                h3='Confirmación de separación de MAD Services: '
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/darse-baja`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    label='¿Confirmas separarte de MAD Services y seguir tu propio camino?: '
+                    br
+                    br
+                    select(name="decideConfirmar")
+                        option(checked)=''
+                        option='Sí'
+                        option='No' 
+                    button.btnTexto(type='submit')='Confirmo'
+                br
+                br
+                h3='Dar de baja a Clientes con su consentimiento: '
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/eliminar-cliente`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    input.camposInputBaja(type='email' name='email' placeholder='Escribe el email del Cliente....')
+                    input.camposInputBaja(type='number' name='idcliente' placeholder='Escribe el ID del Cliente....')
+                    button.btnDarBajaOtrosEnInterfazMiembro(type='submit')
+                        i.fa-solid.fa-user-minus.fa-2xl
+                br
+                br
+                h3='Dar de baja a Empresas con su consentimiento: '
+                form(method='POST' action=`/sesion-miembro/${id}/interfaz/eliminar-empresa`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    input.camposInputBaja(type='email' name='email' placeholder='Escribe el email de la Empresa....')
+                    input.camposInputBaja(type='text' name='cif' placeholder='Escribe el CIF de la Empresa....')
+                    br
+                    br
+                    input.camposInputBaja(type='number' name='idempresa' placeholder='Escribe el ID de la Empresa....')
+                    button.btnDarBajaOtrosEnInterfazMiembro(type='submit')
+                        i.fa-solid.fa-user-minus.fa-2xl
+                br
+                br
+                if cantidadQueHay === 1
+                    h3='Productos MAD que hay a la venta: ' + cantidadQueHay + ' producto.'
+                else 
+                    h3='Productos MAD que hay a la venta: ' + cantidadQueHay + ' productos.'
+        div.row
+            div.column
+                if totalComprados === 1
+                    h3='Productos MAD comprados por los Clientes: ' + totalComprados + ' producto.'
+                else
+                    h3='Productos MAD comprados por los Clientes: ' + totalComprados + ' productos.'
+                each compra in productosMadComprados
+                    .cuadroProductoCompradoEnInterfaz
+                        p=compra.fecha
+                        img(src=`data:image/*;base64,${compra.imagen}`)
+                        p=compra.titulo
+                        p=compra.cantidades
+                        p=compra.preciototal
+                        p='País de la compra: ' + compra.pais
+                        p='Región de la compra: ' + compra.region
+                br
+                br
+                h3='Ganancias totales: ' + ganancias + '€'
+            div.column
+                if cantidadCarrito === 1
+                    h3='Productos MAD en el carrito de compra: ' + cantidadCarrito + ' producto.'
+                else
+                    h3='Productos MAD en el carrito de compra: ' + cantidadCarrito + ' productos.'
+                table
+                    tr 
+                        th='Título del producto'
+                            span
+                        th='Veces añadido'
+                            span
+                        th='Precio total'
+                    each producto in fullCarrito
+                        - var cantidadInt = parseInt(producto.total_cantidad, 10)
+                        if cantidadInt === 1
+                            tr
+                                td=producto.titulo
+                                    span
+                                td=producto.total_cantidad + ' unidad'
+                                    span
+                                td=producto.total_precio + '€'
+                        else 
+                            tr
+                                td=producto.titulo
+                                    span
+                                td=producto.total_cantidad + ' unidades'
+                                    span
+                                td=producto.total_precio + '€'
+                br
+                h3='Correos electrónicos de los clientes registrados con su ID:'
+                each emailEnClientes in totalEmailClientes
+                    p=emailEnClientes.email + ' con ID = ' + emailEnClientes.id
+                br
+                h3='Correos electrónicos de las empresas registradas con su ID:'
+                each emailEnEmpresas in totalEmailEmpresas
+                    p=emailEnEmpresas.email + ' con ID = ' + emailEnEmpresas.id
+                br
+                h3='Correos electrónicos de los miembros MAD registrados con su ID:'
+                each emailEnMiembros in totalEmailMiembros
+                    p=emailEnMiembros.email + ' con ID = ' + emailEnMiembros.id
+        br
+    include ./componentes/piepagina.pug

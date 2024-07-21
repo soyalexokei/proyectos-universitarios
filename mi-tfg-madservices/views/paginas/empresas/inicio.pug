@@ -1,0 +1,21 @@
+//-- Contenido del Inicio Autenticado para Empresas del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+  title=`MAD Services: Sesión ${id}`
+
+block body
+  include ./componentes/cabecera.pug
+  div.inicio
+    br
+    br
+    div.row
+    div.row
+    div.row
+      div.column
+        h1='Resto de marcas'
+        form(method='GET' action=`/sesion-empresa/${id}/themall`)
+            canvas#multiMarca
+            img#imgMulti(src='/images/multimarca.png' alt='multimarca')
+            button.btnCanvasEmpresas
+  include ./componentes/piepagina.pug

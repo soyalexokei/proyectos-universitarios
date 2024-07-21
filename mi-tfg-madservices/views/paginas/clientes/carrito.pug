@@ -1,0 +1,44 @@
+//-- Contenido de la Sección Carrito de la Compra del Comercio Electrónico.
+extends ../../base.pug
+
+block title
+  title=`${id} en el carrito de la compra`
+
+block body
+    include ./componentes/cabecera.pug
+    .interfazCarrito 
+        br
+        div.row#alturaTituloCarrito
+            div.column
+                img(src='/images/carrito.png' alt='carrito')
+            div.column
+                h1='Carrito de la compra:'
+                p='__________________________________________________________________________'
+                form(method='POST' action=`/sesion-cliente/${id}/carrito/quitar-producto`)
+                    input(type='hidden' name='_method' value='DELETE')
+                    each producto in carrito
+                        .carrito
+                            p=producto.cantidad + 'x '
+                                span=producto.titulo + ' ========> '
+                                span=producto.precio + '€ '
+                                button#borrarDeCarrito(type='submit' name='titulo' value=producto.titulo)
+                                    i.fa-solid.fa-eraser.fa-xl#iconoBorrarDeCarrito
+                p='__________________________________________________________________________'
+                form(method='GET' action=`/sesion-cliente/${id}/carrito/comprar`)
+                    - var total = 0;
+                    - var cantidadTotal = 0;
+                    each producto in carrito
+                        - cantidadTotal += producto.cantidad
+                        - total += parseFloat(producto.precio)
+                    .carritoTotal
+                        p='Total: ' + cantidadTotal + 'x ' + total.toFixed(2) + '€'
+                    if cantidadTotal >= 1
+                        button#btnComprar(type='submit')='Comprar'
+            div.column
+                img(src='/images/carrito.png' alt='carrito')
+        div.row
+            footer
+                img(src='/images/anuncio.png' alt='anuncio')
+                img(src='/images/anuncio.png' alt='anuncio')
+        br
+    include ./componentes/piepagina.pug

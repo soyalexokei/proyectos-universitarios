@@ -1,0 +1,80 @@
+//-- Contenido de la Sección Trabaja con Nosotros Autenticado del Cliente del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+  title=`${id} en Trabaja con nosotros`
+
+block body
+  include ./componentes/cabecera.pug
+  div.interfazEmpleo
+    br
+    br
+    div.row
+      div.column
+        h1='¡Envíanos tu CV!'
+        img(src='/images/empleo.png' alt='empleo')
+        br
+        br
+        label='Nombre: '
+        input.camposInput(type='text' name='nombre' placeholder='Introduce tu nombre....')
+        br
+        br
+        label='Apellidos: '
+        input.camposInput(type='text' name='apellidos' placeholder='Introduce tus apellidos....')
+        br
+        br
+        label='Email: '
+        input.camposInput(type='email' name='email' placeholder='Introduce tu correo electrónico....')
+        br
+        br
+        label='Fecha de nacimiento: '
+        input.camposInput(type='date' name='date')
+        br
+        br
+        label='Curriculum Vitae: '
+        input.camposInput(type="file" name='cv' accept=".pdf")
+        br
+        br
+        label='Títulos/Certificados: '
+        input.camposInput(type="file" name='titulos' accept=".pdf" multiple)
+        br
+        br
+        label='Perfil profesional: '
+        select(name='especializacion')
+          option(checked)=''
+          option='TÉCNICO'
+          option='ADMINISTRATIVO'
+          option='ECONOMISTA'
+          option='COMERCIAL'
+          option='LOGÍSTICO' 
+          option='CIBERSEGURIDAD'
+        br
+        br
+        label='Población: '
+        input.camposInput(type="text" name='poblacion' placeholder='Introduce tu población de residencia....')
+        br
+        br
+        label='Región: '
+        input.camposInput(type="text" name='region' placeholder='Introduce tu región de residencia....')
+        br
+        br
+        label='País: '
+        input.camposInput(type="text" name='pais' placeholder='Introduce tu país de residencia....')
+        br
+        br
+        label='Móvil: '
+        input.camposInput(type="number" name='movil' placeholder='Introduce tu número de teléfono....')
+        br
+        br
+        label='Asunto: '
+        input.camposInput(type='text' name='asunto' placeholder='Escribe el título para tu carta de presentación....')
+        br
+        br
+        label='Mensaje: '
+        textarea(cols="45" rows="10" name='mensaje' placeholder='Escribe tu carta de presentación....')
+        br
+        br
+        button.btnTexto(type='submit')='Enviar'
+    br
+    br
+  include ./componentes/piepagina.pug

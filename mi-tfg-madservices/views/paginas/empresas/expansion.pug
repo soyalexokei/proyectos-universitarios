@@ -1,0 +1,168 @@
+//-- Contenido de la Expansión Multimarca del Comercio Electrónico MAD Services.
+extends ../../base.pug
+
+block title
+    title=`${id} en la marca ${marca}`
+
+block body
+    include ./componentes/cabecera.pug
+    .interfazExpansionMultimarca
+        br
+        div.row
+            div.column
+                img(src=`data:image/*;base64,${logo}`)
+            div.column
+                h1=marca
+                br
+                p=descripcion
+            div.column#contactoExpansionMultimarca
+                img(src="/images/whatsapp.png", alt="whatsapp")
+                if whatsapp
+                    span=whatsapp
+                br
+                br
+                img(src="/images/email.png", alt="email")
+                if email 
+                    span=email
+                br
+                br
+                if instagram
+                    a(href=instagram target="_blank")
+                        img(src="/images/instagram.png", alt="instagram")
+                else
+                    img(src="/images/instagram.png", alt="instagram")
+                br
+                br
+                if twitter
+                    a(href=twitter target="_blank")
+                        img(src="/images/twitter.png", alt="twitter")
+                else
+                    img(src="/images/twitter.png", alt="twitter")
+                br
+                br
+                if pagweb
+                    a(href=pagweb target="_blank")
+                        img(src="/images/pageWeb.png", alt="pageWeb")
+                else 
+                    img(src="/images/pageWeb.png", alt="pageWeb")
+        if tipo === 'COMERCIO'
+            div.row
+                div.column
+                    p='Al pulsar conectar, se lleva a cabo el proceso de autorización entre'
+                    p='MAD Services y el Comercio, registrando al cliente en dicha empresa de forma automática.'
+                    p='También podrá haber productos de dicho Comercio para aliviar su stock.'
+            div.row
+                div.column
+            div.row
+                div.column
+                div.column
+                    h3='Productos ' + marca
+                div.column
+            div.row
+                    -var i = 0;
+                    while i < 10
+                        div.productoMarcaMall
+                            h3='Producto A'
+                            img(src='/images/productoEjemplo.jpg' alt='productoEjemplo')
+                            h4='Cantidad: N productos'
+                            h4='Precio: K €'
+                        - i++;
+        else if tipo === 'RESTAURANTE'
+            div.row
+                div.column
+                div.column
+                    h3='Menús ofertados: '
+                div.column
+            div.row
+                div.column
+                    img#menuRestaurante(src='/images/MenuTunante1.png' alt='MenuTunante1')
+                div.column
+                    img#menuRestaurante(src='/images/MenuTunante2.png' alt='MenuTunante2')
+                div.column
+                    img#menuRestaurante(src='/images/MenuTunante3.png' alt='MenuTunante3')
+            div.row
+                div.column
+                div.column
+                    h3='Mesas totales: N mesas (las mesas son entre 1-4 comensales).'
+                div.column
+            div.row
+                div.column
+                    img(src='/images/calendario.jpg' alt='calendario')
+                div.column
+                    h3='Fecha de su reserva: '
+                    br
+                    br
+                    input(type="date" name='fecha')
+                    br
+                    br
+                    input(type='time' name='hora')
+                    br
+                    br
+                    h3='Nº de mesas que quieres: '
+                    br
+                    br
+                    input(type='number' name='mesas')
+            div.row
+                div.column
+                div.column
+                div.column
+        else if tipo === 'PELUQUERIA'
+            div.row
+                div.column
+                    h3='Horario del establecimiento:'
+                    p='Lunes: HH:MM a HH:MM'
+                    p='Martes: HH:MM a HH:MM'
+                    p='Miércoles: HH:MM a HH:MM'
+                    p='Jueves: HH:MM a HH:MM'
+                    p='Viernes: HH:MM a HH:MM'
+                    p='Sábado: HH:MM a HH:MM'
+                    p='Domingo: HH:MM a HH:MM'
+                div.column
+                    img(src='/images/HorarioDiario.png' alt='HorarioDiario')
+                div.column
+                    h4='Selecciona fecha: '
+                    input(type='date' name='fecha')
+                    br
+                    h4='Selecciona el tramo horario de tu cita: '
+                    input(type="radio" name='tramo')
+                    label='HH:MM'
+                    br
+                    input(type="radio" name='tramo')
+                    label='HH:MM'
+                    br
+                    input(type="radio" name='tramo')
+                    label='HH:MM'
+                    br
+                    input(type="radio" name='tramo')
+                    label='HH:MM'
+                    br
+                    input(type="radio" name='tramo')
+                    label='HH:MM'
+            div.row
+                div.column
+                div.column
+                div.column
+        else if tipo === 'ACADEMIA'
+            div.row
+                div.column
+                div.column
+                    h3='Clases ofertadas: '
+                div.column
+            div.row
+                -var i = 0;
+                while i < 10
+                    div.clasesAcademias
+                        h3='Asignatura'
+                        img(src='/images/asignaturasLogo.jpg' alt='asignaturasLogo')
+                        h4='Profesor/a: XXXXXX'
+                        h4='Precio: K €'
+                        h4='Tipo clase: particular o grupal (nº alumnos)'
+                    - i++;
+        div.row
+            div.column
+            div.column
+                form(method='GET' action=`/sesion-empresa/${id}/themall`)
+                    button(type='submit')='Volver'
+            div.column
+        br
+    include ./componentes/piepagina.pug
