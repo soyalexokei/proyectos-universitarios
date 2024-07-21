@@ -1,0 +1,1188 @@
+/*##################################################################################################*/
+/*################################ FONDO Y GENERAL DE MAD SERVICES #################################*/
+/*##################################################################################################*/
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.column {
+  flex: 1;
+  margin: 0 1rem;
+}
+.subcolumn {
+  text-align: center;
+}
+/*##################################################################################################*/
+/*###################################### FORMATO DE LOS ICONOS #####################################*/
+/*##################################################################################################*/
+.fa-solid {
+  color: black;
+  position: relative;
+  right: 5px;
+}
+.fa-solid.fa-cart-arrow-down.fa-2xl {
+  color: white;
+  position: relative;
+  right: 4px;
+  top: 9px;
+}
+/*##################################################################################################*/
+/*################################# PÁGINA POR RECURSO INEXISTENTE #################################*/
+/*##################################################################################################*/
+.Error {
+  text-align: center;
+  padding-top: 100px;
+}
+#estatus {
+  color: red;
+}
+#mensaje {
+  color: white;
+}
+/*##################################################################################################*/
+/*####################################### BOTONES Y ENTRADAS #######################################*/
+/*##################################################################################################*/
+button {
+  text-align: center;
+  border-radius: 10px;
+  border-style: hidden;
+  font-size: large;
+  cursor: pointer;
+  margin-left: 20;
+}
+.btnCategorias {
+  width: 150px;
+  height: 60px;
+  background-color: yellow;
+  color: black;
+}
+.btnAcceso {
+  background-color: white;
+  color: black;
+  width: 220px;
+  height: 60px;
+  font-size: 30px;
+}
+.btnTexto {
+  background-color: black;
+  color: white;
+  width: 100;
+  height: 25;
+}
+.btnOpciones {
+  background-color: transparent;
+  color: white;
+  width: 185;
+  height: 15;
+  font-size: medium;
+}
+.btnCopyRight {
+  background-color: transparent;
+  color: white;
+  width: 215;
+  height: 15;
+  font-size: medium;
+}
+.btnIcono {
+  background-color: transparent;
+  width: 40;
+  height: 40;
+}
+.btnIconoRRSS {
+  background-color: transparent;
+  width: 40;
+  height: 40;
+  margin: 20;
+}
+.btnIconoRRSSmadYt {
+  background-color: transparent;
+  width: 40;
+  height: 30;
+}
+.btnIconoRRSSmad {
+  background-color: transparent;
+  width: 30;
+  height: 30;
+}
+.btnImgLogoMad {
+  width: 120px;
+  height: 97px;
+  background-color: transparent;
+}
+.btnCarrito {
+  width: 50px;
+  height: 40px;
+  background-color: transparent;
+}
+.btnAutenticar {
+  width: 125px;
+  height: 25px;
+  background-color: transparent;
+  color: white;
+}
+.btnAutorizado {
+  width: 125px;
+  height: 25px;
+}
+.camposInput {
+  margin-left: 15px;
+  width: 350px;
+  background-color: silver;
+  text-align: left;
+  color: black;
+  border-radius: 10px;
+  border-style: hidden;
+  height: 25px;
+  padding-left: 10px;
+}
+.camposInputBaja {
+  background-color: silver;
+  margin-right: 20;
+  width: 200;
+  text-align: left;
+  color: black;
+  border-radius: 10px;
+  border-style: hidden;
+  height: 25px;
+  padding-left: 10px;
+}
+.entradasAutorizadas {
+  border-radius: 10px;
+  height: 25px;
+  padding-left: 10px;
+}
+.genero {
+  position: relative;
+  left: -85;
+}
+select {
+  border-radius: 10px;
+  width: 150px;
+  height: 25px;
+  background-color: silver;
+}
+input[type=search] {
+  margin: 5px;
+  width: 190px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+textarea {
+  background-color: silver;
+}
+/*##################################################################################################*/
+/*############################################ CABECERA ############################################*/
+/*##################################################################################################*/
+.cabecera {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 15%;
+}
+.cabecera img {
+  width: 120px;
+  height: 97px;
+  position: relative;
+  right: 6px;
+  top: -1px;
+}
+#posicionColumnasCabecera {
+  margin-top: 40px;
+}
+#posicionCarrito {
+  margin-top: 30px;
+}
+/*##################################################################################################*/
+/*######################################### PIE DE PÁGINA ##########################################*/
+/*##################################################################################################*/
+footer {
+  color: white;
+  width: 100%;
+}
+#posicionRow1PiePagina {
+  margin-top: 20px;
+}
+#posicionRow2PiePagina {
+  margin-top: -70px;
+}
+/*##################################################################################################*/
+/*############################################# INICIO #############################################*/
+/*##################################################################################################*/
+.inicio {
+  width: 100%;
+  height: 125%;
+  background-image: url(../gifs/portadaMADservices.gif);
+}
+.inicio h1 {
+  color: yellow;
+  background-color: silver;
+}
+.categoria {
+  display: inline-block;
+  font-size: xx-large;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: silver;
+  color: black;
+  place-items: center;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  border-color: goldenrod;
+  padding: 40px;
+  box-shadow: 14px 14px 20px silver, -14px -14px 20px white;
+}
+canvas {
+  background-color: transparent;
+}
+.btnCanvas {
+  position: relative;
+  bottom: 400;
+  width: 400;
+  height: 400;
+  background-color: transparent;
+}
+.btnCanvasEmpresas {
+  position: relative;
+  right: 420;
+  width: 400;
+  height: 400;
+  background-color: transparent;
+}
+#imgMAD {
+  display: none;
+}
+#imgMulti {
+  display: none;
+}
+/*##################################################################################################*/
+/*######################################## PANTALLA OPCIÓN #########################################*/
+/*##################################################################################################*/
+.interfazPantallaEleccion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.interfazPantallaEleccion h1 {
+  font-size: xx-large;
+  text-align: center;
+  color: white;
+  word-spacing: 8px;
+}
+/*##################################################################################################*/
+/*############################# PANTALLA AUTORIZACIÓN PARA MIEMBROS MAD ############################*/
+/*##################################################################################################*/
+.formularioAuthMiembroMAD {
+  margin: 325 0 0 575;
+  color: white;
+}
+.alertaAuth {
+  margin: 25 0 0 575;
+}
+.formularioAuthMiembroMAD input {
+  margin-top: 20;
+  margin-right: 20;
+  width: 225;
+}
+.formularioBtn1MiembroMAD {
+  margin: 40 0 0 775;
+}
+.formularioBtn1MiembroMAD button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+}
+.formularioBtn1MiembroMAD button i {
+  position: relative;
+  right: 5px;
+}
+.formularioBtn2MiembroMAD {
+  margin: -40 0 0 725;
+}
+.formularioBtn2MiembroMAD button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+}
+.formularioBtn2MiembroMAD button i {
+  position: relative;
+  right: 5px;
+}
+#iconosAuth {
+  color: white;
+}
+/*##################################################################################################*/
+/*############################### INICIAR SESIÓN: EMPRESA O CLIENTE ################################*/
+/*##################################################################################################*/
+.etiquetaLogin {
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+#Cliente {
+  color: rgb(17, 126, 200);
+}
+#Empresa {
+  color: orange;
+}
+.login {
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background: silver;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  top: 110px;
+  left: 560px;
+  width: 400px;
+  height: 450px;
+  border-radius: 20px;
+  border-color: burlywood;
+  padding: 40px;
+  box-shadow: 14px 14px 20px silver, -14px -14px 20px white;
+}
+.madservicesLOGO {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 10%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px silver, -7px -7px 10px white;
+}
+.entradas {
+  caret-color: red;
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  border: none;
+  position: relative;
+  top: 20px;
+}
+#espaciadoEtiqueta {
+  margin-top: 10px;
+}
+#rellenoLogin {
+  border-radius: 30px;
+  height: 25px;
+  padding-left: 20px;
+}
+#btnAcceso {
+  width: 90px;
+  height: 35px;
+  position: relative;
+  top: 55px;
+  left: 110px;
+}
+.otrosbtnLogin {
+  list-style: none;
+}
+.dosbtnLogin {
+  display: inline-block;
+}
+.btnOpcionesLogin {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 2px;
+  background-color: transparent;
+}
+#btnBackLogin {
+  right: 150px;
+}
+#btnHomeLogin {
+  right: 65px;
+}
+#iconosLogin {
+  color: black;
+  position: relative;
+  right: 5px;
+}
+.btnSinCuenta {
+  color: black;
+  width: 120px;
+  font-size: small;
+  position: relative;
+  top: 10px;
+  right: 20px;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/*##################################################################################################*/
+/*###################################### SECCIÓN: REGISTRARSE ######################################*/
+/*##################################################################################################*/
+.interfazRegistrarse {
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  overflow: hidden;
+}
+.madservicestipologo {
+  width: 100px;
+  height: 100px;
+}
+#animacionRegistrarse {
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  background: silver;
+  justify-content: center;
+  place-items: center;
+  border-color: burlywood;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+  margin-top: 100;
+}
+#btnRegistrarse {
+  width: 40;
+  height: 40;
+  background-color: transparent;
+}
+#btnAltaRegistrarse {
+  width: 120px;
+  height: 35px;
+  margin-left: 20px;
+}
+#btnYaCuentaRegistrarse {
+  width: 150;
+  height: 20;
+  font-size: medium;
+  margin-left: 15px;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/*##################################################################################################*/
+/*######################################## SECCIÓN CONTACTO ########################################*/
+/*##################################################################################################*/
+.interfazContacto {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazContacto img {
+  width: 300px;
+  height: 300px;
+}
+.interfazContacto label {
+  justify-content: left;
+  font-size: large;
+}
+.interfazContacto span {
+  margin-left: 10px;
+  letter-spacing: 4px;
+}
+/*##################################################################################################*/
+/*################################## SECCIÓN CONOCE MAD SERVICES ###################################*/
+/*##################################################################################################*/
+.interfazconoceMADs {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazconoceMADs img {
+  width: 150px;
+  height: 150px;
+  float: center;
+}
+/*##################################################################################################*/
+/*################################## SECCIÓN TRABAJA CON NOSOTROS ##################################*/
+/*##################################################################################################*/
+.interfazEmpleo {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazEmpleo img {
+  width: 150px;
+  height: 150px;
+  float: center;
+}
+/*##################################################################################################*/
+/*################################# SECCIÓN TÉRMINOS Y CONDICIONES #################################*/
+/*##################################################################################################*/
+.interfazTermsConds {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazTermsConds ul {
+  text-align: left;
+  margin-left: 250;
+}
+.interfazTermsConds ul li {
+  display: inline-block;
+}
+.interfazTermsConds a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20;
+}
+.interfazTermsConds span {
+  margin-left: 20;
+}
+/*##################################################################################################*/
+/*#################################### SECCIÓN PERFIL: CLIENTE #####################################*/
+/*##################################################################################################*/
+.perfilCliente {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.perfilCliente header {
+  text-align: center;
+}
+.perfilCliente header img {
+  width: 1300px;
+  height: 300px;
+  border-style: double;
+  border-radius: 7px;
+}
+.perfilCliente button {
+  width: 30;
+  height: 30;
+  margin-left: 20;
+  background-color: transparent;
+}
+.perfilCliente select {
+  width: 200;
+  border-radius: 8px;
+  height: 20;
+  background-color: silver;
+}
+#btnBajaCliente {
+  background-color: black;
+  color: white;
+  width: 100;
+  height: 25;
+  margin-left: 30;
+}
+#tituloLocalizacionCliente {
+  display: inline-block;
+  margin-left: 10;
+}
+.tarjetaBankPerfil img {
+  max-width: 25rem;
+}
+.tarjetaBankPerfil #caraA {
+  position: relative;
+  text-align: center;
+}
+.tarjetaBankPerfil #contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+}
+.tarjetaBankPerfil #contenido img {
+  float: left;
+  position: relative;
+  right: 30;
+  top: 20;
+}
+.tarjetaBankPerfil #contenido #numTarjeta {
+  margin-top: 50;
+}
+.tarjetaBankPerfil #contenido #fechaexp {
+  text-align: right;
+}
+.tarjetaBankPerfil #contenido #nombrecard {
+  text-align: left;
+  width: 300;
+}
+.tarjetaBankPerfil #caraB {
+  position: relative;
+  text-align: center;
+}
+.tarjetaBankPerfil #caraB #contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+}
+.vistaCliente {
+  background-color: black;
+  font-size: xx-small;
+  color: white;
+  margin-left: 10;
+  margin-top: 20;
+  display: inline-block;
+}
+.vistaCliente img {
+  width: 80;
+}
+/*##################################################################################################*/
+/*################################### SECCIÓN INTERFAZ: EMPRESA ####################################*/
+/*##################################################################################################*/
+.interfazEmpresa {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazEmpresa header {
+  text-align: center;
+}
+.interfazEmpresa header img {
+  width: 1300px;
+  height: 300px;
+  border-style: double;
+  border-radius: 7px;
+}
+#numWhatsapp {
+  position: relative;
+  top: -20;
+}
+/*##################################################################################################*/
+/*################################# SECCIÓN INTERFAZ: MIEMBRO MAD ##################################*/
+/*##################################################################################################*/
+.interfazMiembroMAD {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazMiembroMAD header {
+  text-align: center;
+}
+.interfazMiembroMAD header img {
+  width: 1300px;
+  height: 300px;
+  border-style: double;
+  border-radius: 7px;
+}
+.interfazMiembroMAD table {
+  margin-left: 75;
+  text-align: center;
+}
+.interfazMiembroMAD table td {
+  margin-left: 20;
+  text-align: left;
+}
+.interfazMiembroMAD table span {
+  margin-left: 50;
+}
+.cuadroProductoCompradoEnInterfaz {
+  background-color: black;
+  font-size: xx-small;
+  color: white;
+  margin-left: 10;
+  margin-top: 20;
+  display: inline-block;
+}
+.cuadroProductoCompradoEnInterfaz img {
+  width: 80;
+}
+.btnEdicionMiembroEnInterfaz {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+.btnDarBajaOtrosEnInterfazMiembro {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+}
+/*##################################################################################################*/
+/*##################################### SECCIÓN PRODUCTOS MAD ######################################*/
+/*##################################################################################################*/
+.interfazProductosMAD {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.interfazProductosMAD header {
+  text-align: center;
+}
+.interfazProductosMAD header img {
+  width: 1500px;
+  height: 150px;
+  border-style: double;
+  border-radius: 7px;
+}
+.columnIzq {
+  max-height: 900;
+  margin-top: 15;
+  flex: 1;
+  border-radius: 7px;
+  border-style: groove;
+  background-color: silver;
+}
+.columnIzq p {
+  margin-top: 25;
+  text-align: left;
+  margin-left: 30;
+}
+.columnDer {
+  margin-top: 15;
+  flex: 5;
+}
+.tarjetaProductosMAD {
+  float: left;
+  width: 280px;
+  height: 400px;
+  margin-left: 30;
+  transform: perspective(1000px) rotateX(12deg);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  place-items: center;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+}
+.tarjetaProductosMAD img {
+  height: 180px;
+  max-width: 260;
+  transform: perspective(1000px) rotateX(15deg);
+}
+.tarjetaProductosMAD button {
+  background-color: white;
+  color: black;
+  width: 150px;
+}
+.btnsContainer {
+  display: flex;
+  justify-content: center;
+}
+.imagenEjemploMall {
+  width: 260px;
+  width: 180px;
+}
+#btnBorrarProductoMAD {
+  width: 40;
+  height: 40;
+  background-color: transparent;
+}
+#btnEditarProductoMAD {
+  width: 40;
+  height: 40;
+  background-color: transparent;
+  margin-left: 30;
+}
+#btnExpandirProductoMAD {
+  width: 35;
+  height: 35;
+  background-color: transparent;
+  margin-left: 30;
+}
+#iconoBorrarProductoMAD {
+  color: white;
+  position: relative;
+  right: 6px;
+}
+#iconoExpandirProductoMAD {
+  color: white;
+}
+.filtroRangoPrecio {
+  float: left;
+  margin-left: 30;
+}
+/*##################################################################################################*/
+/*################################## SECCIÓN PRODUCTOS THE MALL ####################################*/
+/*##################################################################################################*/
+.tarjetaProductosMALL {
+  float: left;
+  width: 280px;
+  height: 350px;
+  margin-left: 30;
+  transform: perspective(1000px) rotateX(12deg);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  place-items: center;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+}
+#colorServiciosRestaurante {
+  background-color: #fbef07;
+  color: black;
+}
+#colorServiciosComercio {
+  background-color: #61df74;
+  color: black;
+}
+#colorServiciosAcademia {
+  background-color: #ce0d2a;
+  color: black;
+}
+#colorServiciosPeluqueria {
+  background-color: #30cde6;
+  color: black;
+}
+.tarjetaProductosMALL img {
+  height: 200px;
+  transform: perspective(1000px) rotateX(15deg);
+}
+.tarjetaProductosMALL button {
+  width: 100;
+  height: 35;
+  background-color: black;
+  color: white;
+}
+#seleccionTipoEmpresaMall {
+  width: 170;
+  height: 25;
+  border-radius: 10px;
+  background-color: silver;
+}
+#posBusquedaMall {
+  height: 275;
+  width: 250;
+}
+/*##################################################################################################*/
+/*################################# SECCIÓN CARRITO DE LA COMPRA ###################################*/
+/*##################################################################################################*/
+.interfazCarrito {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+#alturaTituloCarrito {
+  margin-top: 50;
+}
+.interfazCarrito img {
+  width: 120px;
+  height: 100px;
+}
+.carrito {
+  text-align: left;
+  font-size: large;
+}
+#iconoBorrarDeCarrito {
+  color: red;
+  position: relative;
+  right: 7px;
+}
+#borrarDeCarrito {
+  width: 25;
+  height: 25;
+  background-color: transparent;
+}
+.interfazCarrito button {
+  float: right;
+}
+#btnComprar {
+  background-color: black;
+  color: white;
+  width: 100;
+  height: 30;
+  margin-top: 20;
+}
+.carritoTotal {
+  text-align: right;
+  font-size: x-large;
+}
+.interfazCarrito footer {
+  text-align: center;
+  background-color: silver;
+}
+.interfazCarrito footer img {
+  width: 1500px;
+  height: 150px;
+  border-style: double;
+  border-radius: 7px;
+}
+/*##################################################################################################*/
+/*################################### SECCIÓN VERIFICAR COMPRA #####################################*/
+/*##################################################################################################*/
+.interfazVerificarCompra {
+  width: 100%;
+  min-height: 130vh;
+  background-color: silver;
+}
+.fa-sharp.fa-solid.fa-location-dot.fa-2xl {
+  color: red;
+}
+.fa-solid.fa-credit-card.fa-2xl {
+  color: #1d5cc9;
+}
+.fa-sharp.fa-solid.fa-cart-shopping.fa-2xl {
+  color: #1a4304;
+}
+.verificarCarrito {
+  text-align: center;
+  font-size: x-large;
+}
+.interfazVerificarCompra .subcolumn2 {
+  font-size: large;
+}
+.interfazVerificarCompra form {
+  text-align: center;
+  font-size: large;
+}
+.tarjetaBancariaEntradas {
+  width: 300;
+  background-color: blue;
+  color: white;
+}
+#btnEditarUbicaEnCompra {
+  width: 30;
+  height: 25;
+  margin-left: 20;
+  background-color: transparent;
+}
+#iconoEditarUbicaEnCompra {
+  position: relative;
+  right: 5;
+}
+/*##################################################################################################*/
+/*################################# SECCIÓN EDITAR PRODUCTO MAD ####################################*/
+/*##################################################################################################*/
+.interfazEdicionProductoMAD {
+  float: center;
+  width: 800px;
+  height: 800px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: silver;
+  color: black;
+  place-items: center;
+  border-radius: 20px;
+  border-color: burlywood;
+  overflow-x: hidden;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+  margin-left: 350;
+  margin-top: 75;
+}
+#tituloEdicionProductoMAD {
+  color: white;
+  text-align: center;
+  margin-top: 50;
+}
+.interfazEdicionProductoMAD select {
+  width: 200;
+  border-radius: 8px;
+  height: 20;
+  background-color: silver;
+}
+.interfazEdicionProductoMAD button {
+  width: 30;
+  height: 30;
+  margin-left: 20;
+  background-color: transparent;
+}
+.interfazEdicionProductoMAD textarea {
+  background-color: silver;
+}
+.interfazEdicionProductoMAD form {
+  margin-top: 50;
+}
+/*##################################################################################################*/
+/*################################ SECCIÓN EXPANDIR PRODUCTO MAD ###################################*/
+/*##################################################################################################*/
+.interfazExpansionProductosMAD {
+  background-image: url('../images/fondoExpandir.jpg');
+  width: 100%;
+  min-height: 130vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.rowExp {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 1500;
+}
+.columnExp {
+  flex: 1;
+  margin: 0 1rem;
+  width: 750;
+  margin-top: 60;
+  margin-left: 50;
+}
+.subrowExp p {
+  width: 450;
+}
+.seccionesExpansion {
+  font-size: medium;
+  margin-left: 20px;
+  text-align: left;
+}
+#rojoExpansion {
+  color: red;
+}
+#verdeExpansion {
+  color: green;
+}
+#btnExpansion {
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  margin-left: 125;
+}
+.interfazExpansionProductosMAD input {
+  background-color: transparent;
+}
+#btnAddMultimedia {
+  width: 80px;
+  height: 35px;
+  background-color: black;
+  color: white;
+}
+#btnGoBackProductosMAD {
+  width: 175;
+  height: 50;
+  background-color: black;
+  color: white;
+}
+#btnBorrarMultimediaMAD {
+  width: 40;
+  height: 40;
+  background-color: transparent;
+  margin-left: 30;
+}
+#iconoBorrarMultimediaMAD {
+  color: black;
+  position: relative;
+  right: 6px;
+}
+.formularioAddBorrarMultimedia {
+  display: inline-block;
+}
+i.cambiarImagen {
+  position: absolute;
+  top: 50%;
+  height: 35px;
+  width: 35px;
+  background-color: #343f4f;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+i.cambiarImagen:active {
+  transform: scale(0.94) translateY(-50%);
+}
+i#prev {
+  left: 175px;
+}
+i#next {
+  right: 950px;
+}
+.contenedorImagenes {
+  overflow: hidden;
+  width: 37%;
+  margin-left: 200;
+}
+.carousel {
+  display: flex;
+  transition: all 0.4s ease;
+  flex-wrap: nowrap;
+}
+.carousel img {
+  min-width: 260px;
+  max-height: 300px;
+  border-style: groove;
+  border-width: 10px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+/*##################################################################################################*/
+/*############################# SECCIÓN EXPANDIR PRODUCTO THE MALL #################################*/
+/*##################################################################################################*/
+.interfazExpansionMultimarca {
+  background-image: url('../images/fondoExpandir.jpg');
+  width: 100%;
+  min-height: 130vh;
+  overflow: hidden;
+}
+.interfazExpansionMultimarca #contactoExpansionMultimarca {
+  margin-top: 50;
+}
+.interfazExpansionMultimarca #contactoExpansionMultimarca img {
+  width: 45;
+  height: 45;
+}
+.interfazExpansionMultimarca #contactoExpansionMultimarca span {
+  margin-left: 15;
+  position: relative;
+  top: -15;
+}
+.interfazExpansionMultimarca button {
+  width: 100;
+  height: 35;
+  background-color: black;
+  color: white;
+}
+#menuRestaurante {
+  width: 400;
+}
+.productoMarcaMall {
+  background-color: #61df74;
+  color: black;
+  width: 280px;
+  height: 400px;
+  margin-left: 15;
+  margin-top: 15;
+  transform: perspective(1000px) rotateX(12deg);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+}
+.clasesAcademias {
+  background-color: #ce0d2a;
+  color: black;
+  width: 280px;
+  height: 440px;
+  margin-left: 15;
+  margin-top: 15;
+  transform: perspective(1000px) rotateX(12deg);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 14px 14px 20px gold, -14px -14px 20px white;
+}
+.productoMarcaMall img {
+  height: 180px;
+  transform: perspective(1000px) rotateX(15deg);
+}
+.clasesAcademias img {
+  height: 180px;
+  transform: perspective(1000px) rotateX(15deg);
+}
+#btnReservar {
+  width: 150;
+  height: 40;
+}
+#btnCarritoComercio {
+  width: 150;
+  height: 35;
+}
